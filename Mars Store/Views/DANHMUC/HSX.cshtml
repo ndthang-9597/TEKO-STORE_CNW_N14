@@ -1,0 +1,14 @@
+﻿@using Mars_Store.Models.Entities;
+@model IEnumerable<DANHMUC>
+<div class="categories">
+    <ul>
+        <h3 class="text-center" style="background: #403372">HÃNG SẢN XUẤT</h3>
+
+        @foreach (DANHMUC p in Model)
+        {
+            <li><a href="/SANPHAM/FilterSPofDM/@p.ID_DM">@p.tendanhmuc</a></li>
+
+
+        }
+    </ul>
+</div>

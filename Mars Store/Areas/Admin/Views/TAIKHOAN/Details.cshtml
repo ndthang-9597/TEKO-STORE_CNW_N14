@@ -1,0 +1,65 @@
+﻿@model Mars_Store.Models.Entities.TAIKHOAN
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<div>
+    <h4>THÔNG TIN TÀI KHOẢN</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            TÊN TÀI KHOẢN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.username)
+        </dd>
+
+        <dt>
+           MẬT KHẨU
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.password)
+        </dd>
+
+        <dt>
+            CHỦ TÀI KHOẢN
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.tentk)
+        </dd>
+
+        <dt>
+            SĐT
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.phone)
+        </dd>
+
+        <dt>
+            MAIL
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.mail)
+        </dd>
+
+        <dt>
+           ĐỊA CHỈ
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.diachi)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("SỬA", "Edit", new { id = Model.ID_TK }) |
+    @Html.ActionLink("QUAY LẠI", "Index")
+</p>

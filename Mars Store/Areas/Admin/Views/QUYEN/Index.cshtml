@@ -1,0 +1,32 @@
+﻿@model IEnumerable<Mars_Store.Models.Entities.QUYEN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("THÊM QUYỀN", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+           QUYỀN
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.TENQUYEN)
+        </td>
+        <td>
+            @Html.ActionLink("SỬA", "Edit", new {id=item.ID_QUYEN}) |
+            @*@Html.ActionLink("Details", "Details", new { /* id=item.PrimaryKey */ }) |*@
+            @Html.ActionLink("XÓA", "Delete", new {id=item.TENQUYEN})
+        </td>
+    </tr>
+}
+
+</table>

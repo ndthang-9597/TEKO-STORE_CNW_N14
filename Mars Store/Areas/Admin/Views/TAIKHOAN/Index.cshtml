@@ -1,0 +1,62 @@
+﻿@model IEnumerable<Mars_Store.Models.Entities.TAIKHOAN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("THÊM TÀI KHOẢN MỚI", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            TÀI KHOẢN
+        </th>
+        <th>
+            MẬT KHẨU
+        </th>
+        <th>
+            CHỦ TÀI KHOẢN
+        </th>
+        <th>
+            SĐT
+        </th>
+        <th>
+            MAIL
+        </th>
+        <th>
+            ĐỊA CHỈ
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.username)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.password)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.tentk)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.phone)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.mail)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.diachi)
+        </td>
+        <td>
+            @Html.ActionLink("SỬA", "Edit", new { id=item.ID_TK }) |
+            @*@Html.ActionLink("CHI TIẾT", "Details", new { id=item.ID_TK }) |*@
+            @Html.ActionLink("XÓA", "Delete", new { id=item.ID_TK })
+        </td>
+    </tr>
+}
+
+</table>

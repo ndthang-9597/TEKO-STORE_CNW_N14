@@ -1,0 +1,51 @@
+﻿@model Mars_Store.Models.Entities.SPGIAMGIA
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>SẢN PHẨM GIẢM GIÁ</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            TÊN SẢN PHẨM
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.SANPHAM.tensanpham)
+        </dd>
+
+        <dt>
+            SỐ LƯỢNG
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.soluong)
+        </dd>
+
+        <dt>
+            GIÁ KHUYẾN MẠI
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.giaht)
+        </dd>
+
+        <dt>
+            NGÀY KHUYẾN MẠI
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.ngayban)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("SỬA", "Edit", new { id = Model.ID_KM }) |
+    @Html.ActionLink("QUAY LẠI", "Index")
+</p>

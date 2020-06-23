@@ -1,0 +1,50 @@
+﻿ `@model IEnumerable<Mars_Store.Models.Entities.SPGIAMGIA>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("THÊM SẢN PHẨM GIẢM GIÁ", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            TÊN SẢN PHẨM
+        </th>
+        <th>
+           SỐ LƯỢNG
+        </th>
+        <th>
+            GIÁ KHUYẾN MẠI
+        </th>
+        <th>
+           NGÀY BÁN
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.SANPHAM.tensanpham)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.soluong)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.giaht)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.ngayban)
+        </td>
+        <td>
+            @Html.ActionLink("SỬA", "Edit", new { id=item.ID_KM }) |
+            @Html.ActionLink("CHI TIẾT", "Details", new { id=item.ID_KM }) |
+            @Html.ActionLink("XÓA", "Delete", new { id=item.ID_KM })
+        </td>
+    </tr>
+}
+
+</table>

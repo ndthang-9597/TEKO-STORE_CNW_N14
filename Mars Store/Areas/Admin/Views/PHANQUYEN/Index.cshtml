@@ -1,0 +1,37 @@
+﻿@model IEnumerable<Mars_Store.Models.Entities.PHANQUYEN>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Areas/Admin/Views/Shared/_layoutAdmin.cshtml";
+}
+
+<p>
+    @Html.ActionLink("  PHÂN QUYỀN CHO TÀI KHOẢN KHÁC", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            TÀI KHOẢN
+        </th>
+        <th>
+            QUYỀN
+        </th>
+    </tr>
+
+@foreach (var item in Model) {
+<tr>
+    <td>
+        @Html.DisplayFor(modelItem => item.TAIKHOAN.username)
+    </td>
+    <td>
+        @Html.DisplayFor(modelItem => item.TENQUYEN)
+    </td>
+    <td>
+        @Html.ActionLink("SỬA", "Edit", new { @*id = item.TENQUYEN*@ }) |
+        @*@Html.ActionLink("Details", "Details", new { id = item.TENQUYEN }) |*@
+        @Html.ActionLink("XÓA", "Delete", new { @*id = item.TENQUYEN*@ })
+    </td>
+</tr>
+}
+
+</table>
