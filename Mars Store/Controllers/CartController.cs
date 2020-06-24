@@ -94,15 +94,7 @@ namespace Mars_Store.Controllers
         public ActionResult RemoveLine(int Id)
         {
 
-            var product = new SANPHAMFunction().FindEntity(Id); ;
-            var cart = (Cart)Session[CartSession];
-            if (cart != null)
-            {
-                cart.RemoveLine(product);
-                //Gán vào session
-                Session[CartSession] = cart;
-            }
-            return RedirectToAction("Index");
+
         }
         public ActionResult Payment(string name, string mobileadd, string diachiadd, string dateout)
         {
